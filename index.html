@@ -1,3 +1,5 @@
+<!-- Code Link: https://github.com/programming-hero-web-course1/b8a6-build-phtube-Solaiman366882 -->
+
 <!doctype html>
 <html>
 <head>
@@ -9,20 +11,56 @@
       theme: {
         extend: {
           colors: {
-            clifford: '#da373d',
+            'border-color': 'rgba(23, 23, 23, 0.20);',
           }
         }
       }
     }
   </script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <div>
-        <nav></nav>
+  <header class="px-4">
+    <div class="container">
+        <nav class="flex flex-col md:flex-row gap-5 justify-between items-center pt-12 pb-8 border-b border-color">
+            <a href="#" class="logo">
+                <img src="assets/images/Logo.png" alt="">
+            </a>
+            <button class="btn">Sort by view</button>
+            <button class="btn active">Blog</button>
+        </nav>
     </div>
   </header>
+  <main class="px-4">
+    <div class="container">
+        <section class="pt-8 pb-10 flex justify-center gap-5 flex-wrap" id="tab-container">
+
+        </section>
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-24" id="card-container">
+            <!-- <div class="card">
+                <div class="card-img"><img src="assets/images/Icon.png" alt=""></div>
+                <div class="card-body">
+                    <div class="profile-img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="card-details">
+                        <h2></h2>
+                        <div class="author-info">
+                            <p></p>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div> -->
+            
+        </section>
+    </div>
+  </main>
 
 
 
