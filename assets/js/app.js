@@ -5,12 +5,10 @@ const handleCategory = async () =>{
     const data = await res.json();
     const categories = data.data;
     displayCategory(categories)
-    // console.log(categories);
 }
-
+// this function is only for show tabs
 const displayCategory = (categories) =>{
     const categoryContainer = document.getElementById('tab-container');
-    // categoryContainer.innerHTML = '';
     categories.forEach(category => {
         const categoryName = category.category;
         const tab = document.createElement('a');
@@ -20,7 +18,7 @@ const displayCategory = (categories) =>{
         categoryContainer.appendChild(tab);
     });
 }
-
+// a function for convert category data to card in html
 const handleCategoryCard = async (category_id) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category_id}`);
     const data = await res.json();
@@ -38,6 +36,7 @@ const handleCategoryCard = async (category_id) => {
             cardContainer.classList = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-24';
             categoryData.forEach(info =>{
                 const card = document.createElement('div');
+                // categoryData.setAttribute =('data-view',`${info?.others?.views}`)
                 const time =info?.others.posted_date;
                 const hour = parseInt(time/3600);
                 const second = time % 3600;
@@ -64,14 +63,20 @@ const handleCategoryCard = async (category_id) => {
             `;
             cardContainer.appendChild(card);
             });
-        // cardContainer.appendChild(card);
+            const tabList = document.querySelectorAll('#tab-container .tab');
+                console.log(tabList);
+
+                tabList.forEach(list => {
+                    console.log(list);
+                    list.addEventListener('click',function(){
+                        
+                        this.classList.add('active');
+                        this.previousElementSibling.classList.remove('active')
+                        this.nextElementSibling.classList.remove('active')
+                    })
+                    
+                } )
         }
-        // console.log(card);
-
-
-    // console.log(categoryData.length);
-    // console.log(data);
-    // console.log(categoryData);
 }
 
 
@@ -101,10 +106,3 @@ const displaySortedView = (viewList) =>{
    }
 }
 
-
-// const time = 16278;
-
-// const hour = time/3600;
-// const second = time%3600;
-// const minute = second/60;
-// console.log(parseInt(hour),parseInt(minute));
