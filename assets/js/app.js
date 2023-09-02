@@ -5,7 +5,7 @@ const handleCategory = async () =>{
     const data = await res.json();
     const categories = data.data;
     displayCategory(categories)
-    console.log(categories);
+    // console.log(categories);
 }
 
 const displayCategory = (categories) =>{
@@ -38,9 +38,16 @@ const handleCategoryCard = async (category_id) => {
             cardContainer.classList = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-24';
             categoryData.forEach(info =>{
                 const card = document.createElement('div');
+                const time =info?.others.posted_date;
+                const hour = parseInt(time/3600);
+                const second = time % 3600;
+                const minute = parseInt(second/60);
                 card.classList = 'card';
                 card.innerHTML = `
-                    <div class="card-img"><img src="${info.thumbnail}" alt=""></div>
+                    <div class="card-img relative">
+                        <img src="${info.thumbnail}" alt="">
+                        <div class="time">${info?.others.posted_date ? `<div class="px-5 py-3 text-white">${hour}hr ${minute}min ago</div>`:''}</div>
+                    </div>
                     <div class="card-body">
                         <div class="profile-img">
                             <img src="${info?.authors[0]?.profile_picture}" alt="">
@@ -51,7 +58,7 @@ const handleCategoryCard = async (category_id) => {
                                 <p>${info?.authors[0].profile_name}</p>
                                 <div>${info?.authors[0].verified ? '<img src="./assets/images/varified.png" alt="">':''}</div>
                             </div>
-                            <p>${info?.others?.views}  views</p>
+                            <p class="views">${info?.others?.views}  views</p>
                         </div>
                     </div>
             `;
@@ -62,9 +69,9 @@ const handleCategoryCard = async (category_id) => {
         // console.log(card);
 
 
-    console.log(categoryData.length);
-    console.log(data);
-    console.log(categoryData);
+    // console.log(categoryData.length);
+    // console.log(data);
+    // console.log(categoryData);
 }
 
 
@@ -75,14 +82,29 @@ document.getElementById('blog-btn').addEventListener('click',function(){
     window.location.href = 'blog.html'
 });
 const handleSort = () =>{
-    const cardContainer = document.getElementById('card-container');
-    console.log(cardContainer);
+    console.log('sorted');
+    const cardList = document.querySelectorAll('#card-container .card .card-body .card-details .views');
+    let viewArray = []
+    for(view of cardList){
+        const viewData = view.innerText;
+        viewArray.push(viewData)
+        console.log(viewData);
+    }
+    const sortedViewArray = viewArray.sort().reverse();
+    console.log(cardList);
+    displaySortedView(sortedViewArray);
 }
 
-handleSort()
+const displaySortedView = (viewList) =>{
+   for(list of viewList){
+    console.log(list.parentNode);
+   }
+}
 
-const time = 7240;
 
-const hour = time/3600;
-const second = time%3600;
-console.log(parseInt(hour),second);
+// const time = 16278;
+
+// const hour = time/3600;
+// const second = time%3600;
+// const minute = second/60;
+// console.log(parseInt(hour),parseInt(minute));

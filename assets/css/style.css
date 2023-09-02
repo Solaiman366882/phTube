@@ -85,3 +85,11 @@ img{
     font-size: 45px;
     font-weight: 700;
 }
+.time {
+    background: #171717; 
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
