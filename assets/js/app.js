@@ -49,7 +49,7 @@ const handleCategoryCard = async (category_id) => {
                             <h2>${info?.title}</h2>
                             <div class="author-info flex items-center gap-3">
                                 <p>${info?.authors[0].profile_name}</p>
-                                <div>${info?.authors[0].verified? '<img src="./assets/images/varified.png" alt="">':''}</div>
+                                <div>${info?.authors[0].verified ? '<img src="./assets/images/varified.png" alt="">':''}</div>
                             </div>
                             <p>${info?.others?.views}  views</p>
                         </div>
@@ -67,5 +67,22 @@ const handleCategoryCard = async (category_id) => {
     console.log(categoryData);
 }
 
+
 handleCategory();
 handleCategoryCard('1000');
+
+document.getElementById('blog-btn').addEventListener('click',function(){
+    window.location.href = 'blog.html'
+});
+const handleSort = () =>{
+    const cardContainer = document.getElementById('card-container');
+    console.log(cardContainer);
+}
+
+handleSort()
+
+const time = 7240;
+
+const hour = time/3600;
+const second = time%3600;
+console.log(parseInt(hour),second);

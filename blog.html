@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            colors: {
+                'border-color': 'rgba(23, 23, 23, 0.20);',
+            }
+            }
+        }
+        }
+    </script>
+  <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <section>
+        <div class="blog-container">
+            <div class="single-blog">
+                <div class="blog-header flex flex-col md:flex-row text-center items-center gap-5">
+                    <img src="assets/images/difference-between-var-let-and-const.webp" class="h-32 w-full object-cover md:w-32 rounded-md" alt="">
+                    <h1>Var, Let, এবং Const এর পার্থক্য?</h1>
+                </div>
+                <div class="p-5">
+                    <p class="text-lg"> 
+                        ES2015 (ES6) এর সাথে অনেক গুলো নতুন ফিচার এসেছে । ES6 এর সাথে আসা ফিচারগুলোর একটি হল let এবং const কীওয়ার্ড, যেগুলোকে ভ্যারিয়েবল ডিক্লেয়ার করার সময় ব্যবহার করা যায়।<br>
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">var: </span>
+                        var ভ্যারিয়েবলগুলো রিডিক্লেয়ার এবং আপডেট করা যায় এবং var এর কিছু সমস্যা আছে,এর কারণে আপনার কোডে অনেক বাগও তৈরি হতে পারে। এজন্যই let এবং const ব্যবহার করা জরুরি।<br>
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">let:</span>
+                        ভ্যারিয়েবল ডেক্লারেশনের জন্য এখন let বেশি ব্যবহার করা হয়। let হল block scoped let এবং  আপডেট করা যায় তবে রিডিক্লেয়ার করা যায় না ।<br>
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">const:</span>
+                        const ব্যবহার করে ডিক্লেয়ার করা ভ্যারিয়েবলগুলো হল ধ্রুবক অর্থাৎ অপরিবর্তনীয়। const ডেক্লারশনগুলো অনেকাংশে let এর মতই। const দিয়ে ডিক্লেয়ার করা ভ্যারিয়েবল অপরিবর্তিত থাকবে। এটা আপডেট অথবা রিডিক্লেয়ার করা যাবে না।
+
+                    </p>
+                </div>
+            </div>
+            <div class="single-blog mt-5">
+                <div class="blog-header flex flex flex-col md:flex-row text-center items-center  gap-5">
+                    <img src="assets/images/restapi2-1.png" class="h-32 w-full object-cover md:w-32 rounded-md" alt="">
+                    <h1>API জিনিসটা কী ?</h1>
+                </div>
+                <div class="p-5">
+                    <p class="text-lg"> 
+                        Rest API - Representational State Transfer Application Programming Interface<br>
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">API: </span>
+                        সহজ করে বলতে গেলে যে পদ্ধতিতে অন্য কোন সফটওয়্যার বা প্লাটফ্রম থেকে ডাটাকে বা ফিচার নিজেদের সফটওয়্যার , প্লাটফ্রম এনে ব্যবহার করতে পাড়ি , যে সিস্টেমে ডাটা বা ফিচার নিজের সফটওয়্যার বা ওয়েব এপ্লিকেশন নিয়ে আসা হয় সেটাই API<br>
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">REST:</span>
+                        REST মানে হল Representational State Transfer, অর্থাৎ প্রত্যেকটি URL কিছু অবজেক্টকে রিপ্রেজেন্ট করে । রেস্ট এর সবচেয়ে ছোট সঙ্গা এর নামেই দেয়া আছে, “Representational State Transfer” অর্থাৎ এটি কোন কিছুর অবস্থা বা স্টেট একটি রিপ্রেজেন্টেশন এর মাধ্যমে ক্লায়েন্ট টু সার্ভার এবং সার্ভার টু ক্লায়েন্টে ট্রান্সফার করে ।<br>
+                        
+
+                    </p>
+                </div>
+            </div>
+            <div class="single-blog mt-5">
+                <div class="blog-header flex flex-col md:flex-row text-center items-center gap-5">
+                    <img src="assets/images/null-and-undefined-in-javascript_thumbnail.webp" class="h-32 w-full object-cover md:w-32 rounded-md" alt="">
+                    <h1>null এবং undefined</h1>
+                </div>
+                <div class="p-5">
+                    <p class="text-lg"> 
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">undefined: </span>
+                        যখন একটা ভেরিয়েবল ডিক্লেয়ার করা হয় কিন্তু এতে কিছু assign করা হয়না বা initialize করা না হয় তখন এই ভেরিয়েবলটির ডেটা টাইপ "undefined" হবে। এই ডেটা টাইপের একটাই মান undefined <br>
+
+                        <span class="block font-bold text-2xl text-slate-500 mt-5">null:</span>
+                        null আর undefined প্রায় একই, একটা পার্থক্য হচ্ছে কোন ভেরিয়েবলের মান null assign করতে পারে কিন্তু undefined দিতে পারবেন না। এই ডেটা টাইপের মান একটাই অর্থ্যাৎ null.<br>
+                       
+
+                    </p>
+                </div>
+            </div>
+            <div class="single-blog">
+                
+            </div>
+            <div class="single-blog">
+                
+            </div>
+        </div>
+    </section>
+</body>
+</html>

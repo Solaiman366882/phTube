@@ -72,3 +72,16 @@ img{
     font-weight: 700;
     line-height: 44px;
 }
+.blog-container {
+    width: 100%;
+    padding: 30px 20px;
+}
+.single-blog {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px;
+}
+.single-blog h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
